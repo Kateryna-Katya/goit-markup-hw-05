@@ -589,8 +589,9 @@ a {
   margin-right: 80px;
 }
 
-.footer-label-div {
+.form-for-label {
   display: flex;
+  gap: 24px;
 }
 .footer-form-text {
   width: 75px;
@@ -604,7 +605,7 @@ a {
   margin-bottom: 16px;
 }
 .footer-form-input {
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   width: 264px;
   height: 40px;
@@ -613,32 +614,38 @@ a {
   padding-top: 8px;
   padding-bottom: 8px;
   margin-right: 24px;
-  background-color: #2e2f42;
+  background-color: transparent;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 24px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #ffffff;
+}
+.footer-form-input::placeholder {
+  color: #ffffff;
 }
 .footer-submit {
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
   border-radius: 4px;
   padding: 8px 24px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
-  background: #4d5ae5;
+  background-color: #4d5ae5;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
+  border: none;
+}
+.footer-button-icon {
+  margin-left: 16px;
 }
 
 .modal-overlay {
