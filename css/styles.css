@@ -661,19 +661,24 @@ a {
   align-items: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
 }
 .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 408px;
-  max-height: 584px;
+  min-height: 584px;
   border-radius: 4px;
-  width: 408px;
-  height: 584px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
-  position: relative;
+
   padding: 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-overlay.is-open {
   opacity: 1;
@@ -681,23 +686,35 @@ a {
 }
 .close-button {
   position: absolute;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
   top: 24px;
   right: 24px;
-  border-radius: 100%;
+  border-radius: 50%;
   stroke-width: 1px;
   fill: #2e2f42;
   stroke: rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transform: fill 250ms cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
 }
 .close-button:hover,
 .close-button:focus {
-  fill: #4d5ae5;
+  background-color: #404bbf;
+  border: none;
 }
 .icon-close {
-  width: 8px;
-  height: 8px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-close:hover,
+.icon-close:focus {
+  fill: #ffffff;
 }
 .modal-text {
   font-family: "Roboto", sans-serif;
@@ -709,6 +726,10 @@ a {
   text-align: center;
   color: #2e2f42;
   margin-top: 24px;
+  margin-bottom: 16px;
+}
+.form-wrapper {
+  margin-bottom: 8px;
 }
 input,
 textarea,
@@ -724,11 +745,11 @@ button {
 .icon-form {
   position: absolute;
   top: 50%;
-  left: 24px;
+  left: 16px;
   width: 18px;
   height: 18px;
   transform: translateY(-50%);
-  transition: translate 250ms cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-label {
   display: block;
@@ -737,19 +758,21 @@ button {
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
   text-align: left;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .input-form {
+  width: 100%;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  width: 360px;
+  background-color: transparent;
   height: 40px;
-  padding-left: 60px;
+  padding-left: 38px;
   transition: border-color 250ms cubic-bezier(0.4, 0.2, 0.2, 1);
+  outline: transparent;
 }
 .input-form:focus {
   border-color: #4d5ae5;
